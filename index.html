@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CALU | Vídeos e Tráfego para Comércios Locais</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Nav -->
+  <nav id="navbar">
+    <div class="nav-logo">CALU</div>
+    <div class="nav-links">
+      <a href="#servicos">Serviços</a>
+      <a href="#portfolio">Portfólio</a>
+      <a href="#processo">Como Funciona</a>
+      <a href="#depoimentos">Depoimentos</a>
+      <a href="#cta" class="nav-cta">Falar com a Calu</a>
+    </div>
+    <div class="hamburger" onclick="toggleMenu()">
+      <span></span><span></span><span></span>
+    </div>
+  </nav>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="#servicos" onclick="toggleMenu()">Serviços</a>
+    <a href="#portfolio" onclick="toggleMenu()">Portfólio</a>
+    <a href="#processo" onclick="toggleMenu()">Como Funciona</a>
+    <a href="#depoimentos" onclick="toggleMenu()">Depoimentos</a>
+    <a href="#cta" onclick="toggleMenu()" style="color: var(--accent);">Falar com a Calu →</a>
+  </div>
+
+  <!-- Hero -->
+  <section id="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-tag">Agência de Vídeo & Tráfego — Rio de Janeiro</div>
+    <h1 class="hero-title fade-up">
+      Reels que <em>convertem.</em><br/>Anúncios que vendem.
+    </h1>
+    <p class="hero-sub fade-up">
+      Captação presencial, edição profissional e gestão de tráfego para comércios e negócios locais no RJ.
+    </p>
+    <div class="hero-actions fade-up">
+      <a href="https://wa.me/55SEUNUMERO" class="btn-primary">Quero mais clientes →</a>
+      <a href="#portfolio" class="btn-outline">Ver portfólio</a>
+    </div>
+    <div class="hero-stats fade-up">
+      <div class="hero-stat">
+        <div class="hero-stat-num">50+</div>
+        <div class="hero-stat-label">Vídeos produzidos</div>
+      </div>
+      <div class="hero-divider"></div>
+      <div class="hero-stat">
+        <div class="hero-stat-num">3×</div>
+        <div class="hero-stat-label">Média de retorno</div>
+      </div>
+      <div class="hero-divider"></div>
+      <div class="hero-stat">
+        <div class="hero-stat-num">RJ</div>
+        <div class="hero-stat-label">Captação presencial</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services -->
+  <section id="servicos">
+    <div class="services-header fade-up">
+      <div class="section-tag">O que fazemos</div>
+      <h2 class="section-title">Tudo que seu negócio precisa para crescer online.</h2>
+      <p class="section-sub">Do roteiro à publicação, cuidamos de cada detalhe para que você foque no que realmente importa: atender clientes.</p>
+    </div>
+    <div class="services-grid">
+      <div class="service-card fade-up">
+        <div class="service-num">01</div>
+        <div class="service-icon">🎬</div>
+        <div class="service-name">Produção de Vídeo</div>
+        <div class="service-desc">Captação presencial no seu negócio, edição profissional e entrega de Reels otimizados para máximo alcance orgânico.</div>
+      </div>
+      <div class="service-card fade-up">
+        <div class="service-num">02</div>
+        <div class="service-icon">📣</div>
+        <div class="service-name">Gestão de Tráfego</div>
+        <div class="service-desc">Criação e gerenciamento de anúncios no Meta Ads (Facebook e Instagram) segmentados para o seu público local.</div>
+      </div>
+      <div class="service-card fade-up">
+        <div class="service-num">03</div>
+        <div class="service-icon">✍️</div>
+        <div class="service-name">Roteiro & Estratégia</div>
+        <div class="service-desc">Desenvolvemos o roteiro ideal para cada vídeo, com foco em storytelling que gera conexão e converte seguidores em clientes.</div>
+      </div>
+      <div class="service-card fade-up">
+        <div class="service-num">04</div>
+        <div class="service-icon">📊</div>
+        <div class="service-name">Relatórios & Resultados</div>
+        <div class="service-desc">Acompanhamento mensal com métricas claras: alcance, engajamento, leads gerados e ROI das campanhas.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Portfolio -->
+  <section id="portfolio">
+    <div class="portfolio-header fade-up">
+      <div class="section-tag">Trabalhos recentes</div>
+      <h2 class="section-title">Cases que falam por si mesmos.</h2>
+      <p class="section-sub">Vídeos e campanhas criados para comércios reais, com resultados mensuráveis.</p>
+    </div>
+    <div class="portfolio-grid">
+      <div class="portfolio-item fade-up">
+        <div class="portfolio-thumb" style="background: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 100%);">▶</div>
+        <div class="portfolio-play">▶</div>
+        <div class="portfolio-overlay">
+          <div class="portfolio-info">
+            <div class="portfolio-cat">Reels · Restaurante</div>
+            <div class="portfolio-title">Campanha de Lançamento — Sabor Carioca</div>
+          </div>
+        </div>
+      </div>
+      <div class="portfolio-item fade-up">
+        <div class="portfolio-thumb" style="background: linear-gradient(135deg, #111 0%, #222 100%);">▶</div>
+        <div class="portfolio-play">▶</div>
+        <div class="portfolio-overlay">
+          <div class="portfolio-info">
+            <div class="portfolio-cat">Tráfego · Clínica</div>
+            <div class="portfolio-title">Captação de Leads — Estética Vida</div>
+          </div>
+        </div>
+      </div>
+      <div class="portfolio-item fade-up">
+        <div class="portfolio-thumb" style="background: linear-gradient(135deg, #1c1c1c 0%, #2c2a1e 100%);">▶</div>
+        <div class="portfolio-play">▶</div>
+        <div class="portfolio-overlay">
+          <div class="portfolio-info">
+            <div class="portfolio-cat">Reels · Moda</div>
+            <div class="portfolio-title">Loja Flor do RJ</div>
+          </div>
+        </div>
+      </div>
+      <div class="portfolio-item fade-up">
+        <div class="portfolio-thumb" style="background: linear-gradient(135deg, #181818 0%, #252520 100%);">▶</div>
+        <div class="portfolio-play">▶</div>
+        <div class="portfolio-overlay">
+          <div class="portfolio-info">
+            <div class="portfolio-cat">Tráfego · Academia</div>
+            <div class="portfolio-title">Fit Zone — Campanha de Matrícula</div>
+          </div>
+        </div>
+      </div>
+      <div class="portfolio-item fade-up">
+        <div class="portfolio-thumb" style="background: linear-gradient(135deg, #141414 0%, #1e1e18 100%);">▶</div>
+        <div class="portfolio-play">▶</div>
+        <div class="portfolio-overlay">
+          <div class="portfolio-info">
+            <div class="portfolio-cat">Reels + Tráfego · Pet</div>
+            <div class="portfolio-title">PetShop Boulevard</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Process -->
+  <section id="processo">
+    <div class="process-header fade-up">
+      <div class="section-tag">Como funciona</div>
+      <h2 class="section-title">Do zero ao ar em 4 etapas simples.</h2>
+      <p class="section-sub">Um processo enxuto para você ter mais resultados sem dor de cabeça.</p>
+    </div>
+    <div class="process-steps">
+      <div class="process-step fade-up">
+        <div class="process-step-num">01</div>
+        <div class="process-step-title">Diagnóstico</div>
+        <div class="process-step-desc">Entendemos seu negócio, público-alvo e objetivos para criar uma estratégia personalizada.</div>
+        <div class="process-arrow">→</div>
+      </div>
+      <div class="process-step fade-up">
+        <div class="process-step-num">02</div>
+        <div class="process-step-title">Roteiro & Planejamento</div>
+        <div class="process-step-desc">Desenvolvemos o roteiro e cronograma de captação presencial no seu estabelecimento.</div>
+        <div class="process-arrow">→</div>
+      </div>
+      <div class="process-step fade-up">
+        <div class="process-step-num">03</div>
+        <div class="process-step-title">Produção & Publicação</div>
+        <div class="process-step-desc">Captamos, editamos e publicamos os vídeos nos melhores horários para seu público.</div>
+        <div class="process-arrow">→</div>
+      </div>
+      <div class="process-step fade-up">
+        <div class="process-step-num">04</div>
+        <div class="process-step-title">Resultados & Escala</div>
+        <div class="process-step-desc">Acompanhamos as métricas, otimizamos as campanhas e escalamos o que está funcionando.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section id="depoimentos">
+    <div class="testi-header fade-up">
+      <div class="section-tag">Depoimentos</div>
+      <h2 class="section-title">Clientes que já estão crescendo.</h2>
+      <p class="section-sub">Resultados reais de negócios locais que apostaram na Calu.</p>
+    </div>
+    <div class="testi-grid">
+      <div class="testi-card fade-up">
+        <div class="testi-stars">★★★★★</div>
+        <div class="testi-quote">"</div>
+        <div class="testi-text">Em 30 dias de parceria com a Calu, meu restaurante triplicou o número de reservas pelo Instagram. Os vídeos ficaram incríveis e as campanhas foram certeiras.</div>
+        <div class="testi-author">
+          <div class="testi-avatar">👨‍🍳</div>
+          <div>
+            <div class="testi-name">Rafael Mendes</div>
+            <div class="testi-role">Dono · Sabor Carioca</div>
+          </div>
+        </div>
+      </div>
+      <div class="testi-card fade-up">
+        <div class="testi-stars">★★★★★</div>
+        <div class="testi-quote">"</div>
+        <div class="testi-text">Nunca imaginei que vídeos curtos pudessem trazer tantos clientes novos. A equipe da Calu entende exatamente o que funciona para comércio local.</div>
+        <div class="testi-author">
+          <div class="testi-avatar">💆‍♀️</div>
+          <div>
+            <div class="testi-name">Camila Sousa</div>
+            <div class="testi-role">Fundadora · Estética Vida</div>
+          </div>
+        </div>
+      </div>
+      <div class="testi-card fade-up">
+        <div class="testi-stars">★★★★★</div>
+        <div class="testi-quote">"</div>
+        <div class="testi-text">Profissionalismo do início ao fim. Eles cuidam de tudo e eu só preciso me preocupar em atender os clientes novos que chegam. Recomendo demais!</div>
+        <div class="testi-author">
+          <div class="testi-avatar">🏋️</div>
+          <div>
+            <div class="testi-name">Bruno Lima</div>
+            <div class="testi-role">Sócio · Fit Zone Academia</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section id="cta">
+    <div class="section-tag fade-up">Pronto para crescer?</div>
+    <h2 class="section-title fade-up">Seu negócio merece ser visto.</h2>
+    <p class="section-sub fade-up">Fale com a gente hoje e receba uma análise gratuita do seu perfil nas redes sociais.</p>
+    <div class="cta-actions fade-up">
+      <a href="https://wa.me/55SEUNUMERO?text=Olá!%20Vi%20o%20site%20da%20Calu%20e%20gostaria%20de%20saber%20mais." class="btn-dark">Falar no WhatsApp →</a>
+      <a href="mailto:contato@caluagencia.com.br" class="btn-outline-dark">Enviar e-mail</a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-top">
+      <div>
+        <div class="footer-brand-name">CALU</div>
+        <div class="footer-brand-desc">Agência de vídeo e tráfego para comércios e negócios locais no Rio de Janeiro.</div>
+        <div class="footer-socials">
+          <a href="https://instagram.com/caluagencia" class="footer-social" title="Instagram">📸</a>
+          <a href="https://wa.me/55SEUNUMERO" class="footer-social" title="WhatsApp">💬</a>
+          <a href="mailto:contato@caluagencia.com.br" class="footer-social" title="Email">✉️</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <div class="footer-col-title">Serviços</div>
+        <a href="#servicos">Produção de Vídeo</a>
+        <a href="#servicos">Gestão de Tráfego</a>
+        <a href="#servicos">Roteiro & Estratégia</a>
+        <a href="#servicos">Relatórios</a>
+      </div>
+      <div class="footer-col">
+        <div class="footer-col-title">Empresa</div>
+        <a href="#portfolio">Portfólio</a>
+        <a href="#processo">Como Funciona</a>
+        <a href="#depoimentos">Depoimentos</a>
+        <a href="#cta">Contato</a>
+      </div>
+      <div class="footer-col">
+        <div class="footer-col-title">Contato</div>
+        <a href="https://wa.me/55SEUNUMERO">WhatsApp</a>
+        <a href="mailto:contato@caluagencia.com.br">contato@caluagencia.com.br</a>
+        <a href="#">Rio de Janeiro, RJ</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="footer-copy">© 2024 CALU Agência. Todos os direitos reservados.</div>
+      <div class="footer-badge">Reels que convertem. Anúncios que vendem.</div>
+    </div>
+  </footer>
+
+  <!-- WhatsApp Float -->
+  <a href="https://wa.me/55SEUNUMERO?text=Olá!%20Vim%20pelo%20site%20da%20Calu%20e%20quero%20saber%20mais." class="whatsapp-float" title="Falar no WhatsApp">
+    💬
+  </a>
+
+  <script src="script.js"></script>
+</body>
+</html>
