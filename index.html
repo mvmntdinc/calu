@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>CALU | Vídeos e Tráfego para Comércios Locais</title>
+  <title>CALU | Vídeo e Presença Digital para Profissionais Liberais no Rio</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -15,12 +15,16 @@
   <nav id="navbar">
     <div class="nav-logo">CALU</div>
     <div class="nav-links">
-      <a href="#servicos">Serviços</a>
-      <a href="#portfolio">Portfólio</a>
-      <a href="#processo">Como Funciona</a>
-      <a href="#depoimentos">Depoimentos</a>
-      <a href="#cta" class="nav-cta">Falar com a Calu</a>
+      <a href="#servicos" data-i18n="nav.services">Serviços</a>
+      <!-- <a href="#portfolio" data-i18n="nav.portfolio">Portfólio</a> -->
+      <a href="#processo" data-i18n="nav.how">Como Funciona</a>
+      <a href="#depoimentos" data-i18n="nav.testimonials">Depoimentos</a>
+      <a href="#cta" class="nav-cta" data-i18n="nav.cta">Falar com a Calu</a>
     </div>
+    <button class="lang-toggle" onclick="toggleLang()" title="Switch language">
+      <span class="lang-flag">🇧🇷</span>
+      <span class="lang-label" id="langLabel">EN</span>
+    </button>
     <div class="hamburger" onclick="toggleMenu()">
       <span></span><span></span><span></span>
     </div>
@@ -28,50 +32,92 @@
 
   <!-- Mobile Menu -->
   <div class="mobile-menu" id="mobileMenu">
-    <a href="#servicos" onclick="toggleMenu()">Serviços</a>
-    <a href="#portfolio" onclick="toggleMenu()">Portfólio</a>
-    <a href="#processo" onclick="toggleMenu()">Como Funciona</a>
-    <a href="#depoimentos" onclick="toggleMenu()">Depoimentos</a>
-    <a href="#cta" onclick="toggleMenu()" style="color: var(--accent);">Falar com a Calu →</a>
+    <a href="#servicos" onclick="toggleMenu()" data-i18n="nav.services">Serviços</a>
+    <!-- <a href="#portfolio" onclick="toggleMenu()" data-i18n="nav.portfolio">Portfólio</a> -->
+    <a href="#processo" onclick="toggleMenu()" data-i18n="nav.how">Como Funciona</a>
+    <a href="#depoimentos" onclick="toggleMenu()" data-i18n="nav.testimonials">Depoimentos</a>
+    <a href="#cta" onclick="toggleMenu()" style="color: var(--accent);" data-i18n="nav.cta">Falar com a Calu →</a>
   </div>
 
   <!-- Hero -->
   <section id="hero">
+    <div class="hero-slide active" style="background-image:url('ssss_c.jpg'); transform: scaleX(-1);"></div>
+    <div class="hero-slide" style="background-image:url('k_c.jpg')"></div>
+    <div class="hero-slide" style="background-image:url('este_c.jpg')"></div>
     <div class="hero-bg"></div>
-    <h1 class="hero-title fade-up">
-      Seus pacientes te<br/>encontram online.<br/><em>Seus concorrentes, não.</em>
+    <h1 class="hero-title fade-up" data-i18n="hero.title">
+      A sua imagem online deveria ser tão boa<br/><em>quanto o seu trabalho.</em>
     </h1>
-    <p class="hero-sub fade-up">
-      Vídeo criativo, site profissional, tráfego pago e presença no Google — tudo junto, tudo funcionando, sem você precisar entender de marketing.
+    <p class="hero-sub fade-up" data-i18n="hero.sub">
+      Produção de vídeo com câmera profissional no seu consultório, tráfego pago e estratégia digital — para profissionais liberais no Rio que querem parar de depender de indicação.
     </p>
     <div class="hero-actions fade-up">
-      <a href="https://wa.me/55SEUNUMERO?text=Olá!%20Quero%20mais%20pacientes%20e%20clientes." class="btn-primary">Quero mais clientes →</a>
-      <a href="#servicos" class="btn-outline">Como funciona</a>
+      <a href="https://wa.me/5521982629968?text=Olá!%20Quero%20mais%20pacientes%20e%20clientes." class="btn-primary" data-i18n="hero.btn1">Quero mais clientes →</a>
+      <a href="#servicos" class="btn-outline" data-i18n="hero.btn2">Como funciona</a>
     </div>
-    <div class="hero-stats fade-up">
-      <div class="hero-stat">
-        <div class="hero-stat-num">4</div>
-        <div class="hero-stat-label">Soluções integradas</div>
+  </section>
+
+  <!-- Para quem é -->
+  <section id="para-quem">
+    <div class="pq-header fade-up">
+      <div class="section-tag">Para quem é</div>
+      <h2 class="section-title">Seu próximo cliente está no Google.<br/><em>Ele só ainda não te encontrou.</em></h2>
+
+    </div>
+    <div class="pq-grid">
+
+      <div class="pq-card fade-up">
+        <div class="pq-icon">🦷</div>
+        <div class="pq-specialty">Dentistas</div>
+        <div class="pq-pain">O problema</div>
+        <p class="pq-pain-text">Agenda vazia entre indicações. Pacientes que pesquisam no Google e escolhem o concorrente porque ele aparece primeiro e tem mais conteúdo.</p>
+        <div class="pq-solution-label">O que a Calu faz</div>
+        <ul class="pq-list">
+          <li>Vídeos filmados no consultório com câmera profissional</li>
+          <li>Perfil otimizado no Google Maps com avaliações</li>
+          <li>Anúncios segmentados por bairro e procedimento</li>
+        </ul>
       </div>
-      <div class="hero-divider"></div>
-      <div class="hero-stat">
-        <div class="hero-stat-num">RJ</div>
-        <div class="hero-stat-label">Atendimento presencial</div>
+
+      <div class="pq-card pq-card--featured fade-up">
+        <div class="pq-icon">⚕️</div>
+        <div class="pq-specialty">Médicos & Clínicas</div>
+        <div class="pq-pain">O problema</div>
+        <p class="pq-pain-text">Dificuldade em transmitir autoridade online. Pacientes não sabem diferenciar você de outros médicos — e escolhem pelo preço, não pela qualidade.</p>
+        <div class="pq-solution-label">O que a Calu faz</div>
+        <ul class="pq-list">
+          <li>Vídeos de autoridade filmados com câmera profissional</li>
+          <li>Site profissional focado em conversão</li>
+          <li>Presença consistente no Instagram e Google</li>
+        </ul>
       </div>
-      <div class="hero-divider"></div>
-      <div class="hero-stat">
-        <div class="hero-stat-num">0</div>
-        <div class="hero-stat-label">Dor de cabeça pra você</div>
+
+      <div class="pq-card fade-up">
+        <div class="pq-icon">⚖️</div>
+        <div class="pq-specialty">Advogados</div>
+        <div class="pq-pain">O problema</div>
+        <p class="pq-pain-text">Dependência total de indicação. Quando o fluxo de indicações seca, a agenda seca junto — e não há canal digital para compensar.</p>
+        <div class="pq-solution-label">O que a Calu faz</div>
+        <ul class="pq-list">
+          <li>Vídeos filmados no seu escritório que transmitem credibilidade</li>
+          <li>SEO para termos como "advogado trabalhista RJ"</li>
+          <li>Landing page com captação ativa de contatos</li>
+        </ul>
       </div>
+
+    </div>
+    <div class="pq-footer fade-up">
+      <p>Também atendemos <strong>contadores</strong>, <strong>arquitetos</strong>, <strong>psicólogos</strong> e outros profissionais liberais.</p>
+      <a href="#cta" class="btn-primary">Quero meu diagnóstico gratuito →</a>
     </div>
   </section>
 
   <!-- Services -->
   <section id="servicos">
     <div class="services-header fade-up">
-      <div class="section-tag">O que entregamos</div>
-      <h2 class="section-title">Uma máquina completa de novos clientes.</h2>
-      <p class="section-sub">Enquanto você atende, a gente trabalha para que mais pessoas te encontrem, confiem em você e marquem consulta.</p>
+      <div class="section-tag" data-i18n="services.tag">O que entregamos</div>
+      <h2 class="section-title" data-i18n="services.title">Cada negócio tem uma lacuna.<br/><em>A gente descobre a sua.</em></h2>
+      <p class="section-sub" data-i18n="services.sub">Antes de qualquer proposta, fazemos um diagnóstico gratuito. Pode ser um serviço, pode ser tudo — depende do que o seu negócio realmente precisa agora.</p>
     </div>
     <div class="services-grid">
       <div class="service-card fade-up">
@@ -83,8 +129,8 @@
             <circle cx="8" cy="16" r="2.5" stroke="white" stroke-width="1.5"/>
           </svg>
         </div>
-        <div class="service-name">Vídeo Criativo</div>
-        <div class="service-desc">Captação presencial no seu consultório ou escritório. Vídeos que mostram sua autoridade, geram confiança e fazem pacientes escolherem você antes de conhecerem seus concorrentes.</div>
+        <div class="service-name" data-i18n="service1.name">Vídeo Criativo</div>
+        <div class="service-desc" data-i18n="service1.desc">Câmera cinema, iluminação profissional e captação presencial no seu consultório. Não é vídeo de iPhone — é produção que faz o paciente sentir a diferença antes mesmo de marcar consulta.</div>
       </div>
       <div class="service-card fade-up">
         <div class="service-num">02</div>
@@ -95,8 +141,8 @@
             <path d="M8 12H24M8 16H18" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
           </svg>
         </div>
-        <div class="service-name">Site & Landing Page</div>
-        <div class="service-desc">Seu site profissional ou página de vendas otimizada para converter visitantes em pacientes. Rápido, moderno e feito para aparecer no Google.</div>
+        <div class="service-name" data-i18n="service2.name">Site & Landing Page</div>
+        <div class="service-desc" data-i18n="service2.desc">Seu site profissional ou página de vendas otimizada para converter visitantes em pacientes. Rápido, moderno e feito para aparecer no Google.</div>
       </div>
       <div class="service-card fade-up">
         <div class="service-num">03</div>
@@ -106,8 +152,8 @@
             <path d="M20 8H28V16" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
           </svg>
         </div>
-        <div class="service-name">Tráfego Pago</div>
-        <div class="service-desc">Anúncios no Meta Ads com os seus vídeos criativos. Campanha configurada e gerenciada para atrair exatamente o perfil de paciente que você quer atender.</div>
+        <div class="service-name" data-i18n="service3.name">Tráfego Pago</div>
+        <div class="service-desc" data-i18n="service3.desc">Anúncios no Meta Ads com os seus vídeos criativos. Campanha configurada e gerenciada para atrair exatamente o perfil de paciente que você quer atender.</div>
       </div>
       <div class="service-card fade-up">
         <div class="service-num">04</div>
@@ -118,237 +164,175 @@
             <path d="M16 6V4M22.5 8.5L24 7M25 14H27M22.5 19.5L24 21M16 22V24" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
           </svg>
         </div>
-        <div class="service-name">SEO & Google Maps</div>
-        <div class="service-desc">Seu nome aparece quando alguém pesquisa "dentista perto de mim" ou "advogado no Rio". Presença orgânica que traz clientes sem pagar por clique.</div>
+        <div class="service-name" data-i18n="service4.name">SEO & Google Maps</div>
+        <div class="service-desc" data-i18n="service4.desc">Seu nome aparece quando alguém pesquisa "dentista perto de mim" ou "advogado no Rio". Presença orgânica que traz clientes sem pagar por clique.</div>
       </div>
-    </div>
-  </section>
-
-  <!-- Portfolio -->
-  <section id="portfolio">
-    <div class="portfolio-header fade-up">
-      <div class="section-tag">Portfólio</div>
-      <h2 class="section-title">Nosso trabalho.</h2>
-      <p class="section-sub">Cada vídeo produzido com intenção. Cada campanha com estratégia.</p>
-    </div>
-
-    <!-- Instagram-style feed -->
-    <div class="insta-feed">
-
-      <!-- Profile bar -->
-      <div class="insta-profile">
-        <div class="insta-avatar">
-          <img src="logo.png" alt="CALU" style="width:100%;height:100%;object-fit:cover;border-radius:50%;">
-        </div>
-        <div class="insta-profile-info">
-          <div class="insta-handle">caluagencia</div>
-          <div class="insta-name">CALU · Vídeo & Tráfego</div>
-        </div>
-        <a href="https://instagram.com/caluagencia" target="_blank" class="insta-follow">Seguir</a>
-      </div>
-
-      <!-- Grid -->
-      <div class="insta-grid">
-        <div class="insta-item fade-up" onclick="openModal('videos/sabor-carioca.mp4', 'Reels · Restaurante — Sabor Carioca')">
-          <div class="insta-thumb" style="background: #1a1a1a;">
-            <div class="insta-overlay">
-              <div class="insta-play">
-                <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
-                  <circle cx="14" cy="14" r="13" stroke="white" stroke-width="1.5"/>
-                  <path d="M11 9.5L20 14L11 18.5V9.5Z" fill="white"/>
-                </svg>
-              </div>
-              <div class="insta-info">
-                <div class="insta-cat">Reels · Restaurante</div>
-                <div class="insta-title">Sabor Carioca</div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="insta-item fade-up" onclick="openModal('videos/estetica-vida.mp4', 'Tráfego · Clínica — Estética Vida')">
-          <div class="insta-thumb" style="background: #222;">
-            <div class="insta-overlay">
-              <div class="insta-play">
-                <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
-                  <circle cx="14" cy="14" r="13" stroke="white" stroke-width="1.5"/>
-                  <path d="M11 9.5L20 14L11 18.5V9.5Z" fill="white"/>
-                </svg>
-              </div>
-              <div class="insta-info">
-                <div class="insta-cat">Tráfego · Clínica</div>
-                <div class="insta-title">Estética Vida</div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="insta-item fade-up" onclick="openModal('videos/loja-flor.mp4', 'Reels · Moda — Loja Flor do RJ')">
-          <div class="insta-thumb" style="background: #1c1c1c;">
-            <div class="insta-overlay">
-              <div class="insta-play">
-                <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
-                  <circle cx="14" cy="14" r="13" stroke="white" stroke-width="1.5"/>
-                  <path d="M11 9.5L20 14L11 18.5V9.5Z" fill="white"/>
-                </svg>
-              </div>
-              <div class="insta-info">
-                <div class="insta-cat">Reels · Moda</div>
-                <div class="insta-title">Loja Flor do RJ</div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="insta-item fade-up" onclick="openModal('videos/fit-zone.mp4', 'Tráfego · Academia — Fit Zone')">
-          <div class="insta-thumb" style="background: #181818;">
-            <div class="insta-overlay">
-              <div class="insta-play">
-                <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
-                  <circle cx="14" cy="14" r="13" stroke="white" stroke-width="1.5"/>
-                  <path d="M11 9.5L20 14L11 18.5V9.5Z" fill="white"/>
-                </svg>
-              </div>
-              <div class="insta-info">
-                <div class="insta-cat">Tráfego · Academia</div>
-                <div class="insta-title">Fit Zone</div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="insta-item fade-up" onclick="openModal('videos/petshop.mp4', 'Reels · Pet — PetShop Boulevard')">
-          <div class="insta-thumb" style="background: #141414;">
-            <div class="insta-overlay">
-              <div class="insta-play">
-                <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
-                  <circle cx="14" cy="14" r="13" stroke="white" stroke-width="1.5"/>
-                  <path d="M11 9.5L20 14L11 18.5V9.5Z" fill="white"/>
-                </svg>
-              </div>
-              <div class="insta-info">
-                <div class="insta-cat">Reels · Pet</div>
-                <div class="insta-title">PetShop Boulevard</div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="insta-item fade-up" onclick="openModal('videos/studio-hair.mp4', 'Campanha · Beleza — Studio Hair RJ')">
-          <div class="insta-thumb" style="background: #202020;">
-            <div class="insta-overlay">
-              <div class="insta-play">
-                <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
-                  <circle cx="14" cy="14" r="13" stroke="white" stroke-width="1.5"/>
-                  <path d="M11 9.5L20 14L11 18.5V9.5Z" fill="white"/>
-                </svg>
-              </div>
-              <div class="insta-info">
-                <div class="insta-cat">Campanha · Beleza</div>
-                <div class="insta-title">Studio Hair RJ</div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Ver mais -->
-      <div class="insta-footer">
-        <a href="https://instagram.com/caluagencia" target="_blank" class="insta-more">
-          Ver mais no Instagram
-          <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
-            <path d="M2 12L12 2M12 2H5M12 2V9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
-        </a>
-      </div>
-
     </div>
   </section>
 
   <!-- Process -->
   <section id="processo">
     <div class="process-header fade-up">
-      <div class="section-tag">Como funciona</div>
-      <h2 class="section-title">Simples para você. Complexo por baixo.</h2>
-      <p class="section-sub">Você não precisa entender de marketing. Precisa só atender os novos clientes que vão chegar.</p>
+      <div class="section-tag" data-i18n="process.tag">Como funciona</div>
+      <h2 class="section-title" data-i18n="process.title">Simples para você. Complexo por baixo.</h2>
+      <p class="section-sub" data-i18n="process.sub">Você não precisa entender de marketing. Precisa só atender os novos clientes que vão chegar.</p>
     </div>
     <div class="process-steps">
       <div class="process-step fade-up">
         <div class="process-step-num">01</div>
-        <div class="process-step-title">Diagnóstico gratuito</div>
-        <div class="process-step-desc">Analisamos sua presença digital atual, seus concorrentes e onde estão as maiores oportunidades para o seu perfil.</div>
+        <div class="process-step-title" data-i18n="step1.title">Diagnóstico gratuito</div>
+        <div class="process-step-desc" data-i18n="step1.desc">Analisamos sua presença digital atual, seus concorrentes e onde estão as maiores oportunidades para o seu perfil.</div>
         <div class="process-arrow">→</div>
       </div>
       <div class="process-step fade-up">
         <div class="process-step-num">02</div>
-        <div class="process-step-title">Produção & Estrutura</div>
-        <div class="process-step-desc">Gravamos os vídeos no seu consultório, construímos seu site e configuramos toda a estrutura de captação de clientes.</div>
+        <div class="process-step-title" data-i18n="step2.title">Produção & Estrutura</div>
+        <div class="process-step-desc" data-i18n="step2.desc">Gravamos os vídeos no seu consultório, construímos seu site e configuramos toda a estrutura de captação de clientes.</div>
         <div class="process-arrow">→</div>
       </div>
       <div class="process-step fade-up">
         <div class="process-step-num">03</div>
-        <div class="process-step-title">Ativação & Tráfego</div>
-        <div class="process-step-desc">Ligamos as campanhas, colocamos seu negócio no Google Maps e começamos a atrair os primeiros clientes.</div>
+        <div class="process-step-title" data-i18n="step3.title">Ativação & Tráfego</div>
+        <div class="process-step-desc" data-i18n="step3.desc">Ligamos as campanhas, colocamos seu negócio no Google Maps e começamos a atrair os primeiros clientes.</div>
         <div class="process-arrow">→</div>
       </div>
       <div class="process-step fade-up">
         <div class="process-step-num">04</div>
-        <div class="process-step-title">Você só atende</div>
-        <div class="process-step-desc">A máquina está rodando. Novos clientes chegando. Você foca no que sabe fazer — a gente cuida do resto.</div>
+        <div class="process-step-title" data-i18n="step4.title">Você só atende</div>
+        <div class="process-step-desc" data-i18n="step4.desc">A máquina está rodando. Novos clientes chegando. Você foca no que sabe fazer — a gente cuida do resto.</div>
       </div>
     </div>
+  </section>
+
+  <!-- Portfolio: standby — remover o style="display:none" quando tiver vídeos -->
+  <section id="portfolio-prova" style="display:none">
   </section>
 
   <!-- Testimonials -->
   <section id="depoimentos">
     <div class="testi-header fade-up">
-      <div class="section-tag">Depoimentos</div>
-      <h2 class="section-title">Profissionais que pararam de depender de indicação.</h2>
-      <p class="section-sub">Resultados reais de médicos, dentistas e advogados que decidiram aparecer online.</p>
+      <div class="section-tag" data-i18n="testi.tag">Depoimentos</div>
+      <h2 class="section-title" data-i18n="testi.title">Profissionais que pararam de depender de indicação.</h2>
+      <p class="section-sub" data-i18n="testi.sub">Resultados reais de médicos, dentistas e advogados que decidiram aparecer online.</p>
     </div>
     <div class="testi-grid">
       <div class="testi-card fade-up">
         <div class="testi-stars">★★★★★</div>
         <div class="testi-quote">"</div>
-        <div class="testi-text">Minha agenda estava dependendo só de indicação. Depois que a Calu estruturou minha presença digital, comecei a receber mensagens de pacientes novos toda semana pelo Instagram e pelo Google.</div>
+        <div class="testi-text" data-i18n="testi1.text">Minha agenda estava dependendo só de indicação. Depois que a Calu estruturou minha presença digital, comecei a receber mensagens de pacientes novos toda semana pelo Instagram e pelo Google.</div>
         <div class="testi-author">
           <div class="testi-avatar">👩‍⚕️</div>
           <div>
-            <div class="testi-name">Dra. Fernanda Lima</div>
-            <div class="testi-role">Dermatologista · Rio de Janeiro</div>
+            <div class="testi-name" data-i18n="testi1.name">Dra. Fernanda Lima</div>
+            <div class="testi-role" data-i18n="testi1.role">Dermatologista · Rio de Janeiro</div>
           </div>
         </div>
       </div>
       <div class="testi-card fade-up">
         <div class="testi-stars">★★★★★</div>
         <div class="testi-quote">"</div>
-        <div class="testi-text">Eu não entendia nada de marketing e nem queria entender. A Calu cuidou de tudo — vídeo, site, anúncio. Hoje apareço antes dos meus concorrentes no Google.</div>
+        <div class="testi-text" data-i18n="testi2.text">Eu não entendia nada de marketing e nem queria entender. A Calu cuidou de tudo — vídeo, site, anúncio. Hoje apareço antes dos meus concorrentes no Google.</div>
         <div class="testi-author">
           <div class="testi-avatar">⚖️</div>
           <div>
-            <div class="testi-name">Dr. Marcos Andrade</div>
-            <div class="testi-role">Advogado Tributarista · RJ</div>
+            <div class="testi-name" data-i18n="testi2.name">Dr. Marcos Andrade</div>
+            <div class="testi-role" data-i18n="testi2.role">Advogado Tributarista · RJ</div>
           </div>
         </div>
       </div>
       <div class="testi-card fade-up">
         <div class="testi-stars">★★★★★</div>
         <div class="testi-quote">"</div>
-        <div class="testi-text">Os vídeos que a Calu produziu passam exatamente a confiança que eu quero transmitir aos meus pacientes. O resultado foi imediato — agenda cheia em menos de 60 dias.</div>
+        <div class="testi-text" data-i18n="testi3.text">Os vídeos que a Calu produziu passam exatamente a confiança que eu quero transmitir aos meus pacientes. O resultado foi imediato — agenda cheia em menos de 60 dias.</div>
         <div class="testi-author">
           <div class="testi-avatar">🦷</div>
           <div>
-            <div class="testi-name">Dr. Rafael Costa</div>
-            <div class="testi-role">Dentista Implantodontista · RJ</div>
+            <div class="testi-name" data-i18n="testi3.name">Dr. Rafael Costa</div>
+            <div class="testi-role" data-i18n="testi3.role">Dentista Implantodontista · RJ</div>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- CTA -->
+  <!-- CTA + Formulário -->
   <section id="cta">
-    <div class="section-tag fade-up">Diagnóstico gratuito</div>
-    <h2 class="section-title fade-up">Seus concorrentes já estão aparecendo.<br/><em>E você?</em></h2>
-    <p class="section-sub fade-up">Fale com a gente hoje e receba uma análise gratuita da sua presença digital — sem compromisso.</p>
-    <div class="cta-actions fade-up">
-      <a href="https://wa.me/55SEUNUMERO?text=Olá!%20Quero%20uma%20análise%20gratuita%20da%20minha%20presença%20digital." class="btn-light">Quero minha análise gratuita →</a>
-      <a href="mailto:contato@caluagencia.com.br" class="btn-outline-light">Enviar e-mail</a>
+    <div class="cta-inner">
+      <div class="cta-left fade-up">
+        <div class="section-tag" data-i18n="cta.tag">Diagnóstico gratuito</div>
+        <h2 class="section-title" data-i18n="cta.title">Seus concorrentes já estão aparecendo.<br/><em>E você?</em></h2>
+        <p class="section-sub" data-i18n="cta.sub">Responda 4 perguntas rápidas e receba uma análise personalizada da sua presença digital — sem compromisso.</p>
+        <div class="cta-trust">
+          <div class="cta-trust-item">✓ Resposta em até 24h</div>
+          <div class="cta-trust-item">✓ Sem enrolação</div>
+          <div class="cta-trust-item">✓ 100% gratuito</div>
+        </div>
+      </div>
+
+      <div class="cta-mobile-btn fade-up">
+        <a href="https://wa.me/5521982629968?text=Olá!%20Vim%20pelo%20site%20da%20Calu%20e%20quero%20meu%20diagnóstico%20gratuito." class="btn-submit" style="display:block;text-align:center;text-decoration:none;">
+          Quero meu diagnóstico gratuito →
+        </a>
+        <p class="form-disclaimer">Você será redirecionado ao WhatsApp da Calu.</p>
+      </div>
+
+      <div class="cta-form-wrap fade-up">
+        <form class="cta-form" id="ctaForm" onsubmit="submitForm(event)">
+
+          <div class="form-group">
+            <label class="form-label">Qual é a sua profissão?</label>
+            <div class="form-options" id="profissao">
+              <button type="button" class="form-opt" data-val="Dentista">🦷 Dentista</button>
+              <button type="button" class="form-opt" data-val="Médico">⚕️ Médico</button>
+              <button type="button" class="form-opt" data-val="Advogado">⚖️ Advogado</button>
+              <button type="button" class="form-opt" data-val="Clínica de Estética">✨ Estética</button>
+              <button type="button" class="form-opt" data-val="Outro">Outro</button>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Já investe em marketing digital?</label>
+            <div class="form-options" id="marketing">
+              <button type="button" class="form-opt" data-val="Não, nunca investi">Não, nunca</button>
+              <button type="button" class="form-opt" data-val="Sim, invisto atualmente">Sim, atualmente</button>
+              <button type="button" class="form-opt" data-val="Já tentei mas parei">Já tentei, parei</button>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Qual é o seu maior problema hoje?</label>
+            <div class="form-options" id="problema">
+              <button type="button" class="form-opt" data-val="Poucos clientes novos">Poucos clientes novos</button>
+              <button type="button" class="form-opt" data-val="Não apareço no Google">Não apareço no Google</button>
+              <button type="button" class="form-opt" data-val="Dependo só de indicação">Só tenho indicação</button>
+              <button type="button" class="form-opt" data-val="Sem tempo para criar conteúdo">Sem tempo pra conteúdo</button>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Faturamento mensal aproximado?</label>
+            <div class="form-options" id="faturamento">
+              <button type="button" class="form-opt" data-val="Até R$10k">Até R$10k</button>
+              <button type="button" class="form-opt" data-val="R$10k–30k">R$10k–30k</button>
+              <button type="button" class="form-opt" data-val="R$30k–80k">R$30k–80k</button>
+              <button type="button" class="form-opt" data-val="Acima de R$80k">Acima de R$80k</button>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Seu nome e WhatsApp</label>
+            <div class="form-inputs">
+              <input type="text" class="form-input" id="nome" placeholder="Seu nome" required />
+              <input type="tel" class="form-input" id="telefone" placeholder="(21) 99999-9999" required />
+            </div>
+          </div>
+
+          <button type="submit" class="btn-submit">
+            Quero meu diagnóstico gratuito →
+          </button>
+          <p class="form-disclaimer">Ao enviar, você será redirecionado ao WhatsApp da Calu.</p>
+        </form>
+      </div>
     </div>
   </section>
 
@@ -357,42 +341,42 @@
     <div class="footer-top">
       <div>
         <div class="footer-brand-name">CALU</div>
-        <div class="footer-brand-desc">Presença digital completa para médicos, dentistas e advogados no Rio de Janeiro.</div>
+        <div class="footer-brand-desc" data-i18n="footer.desc">Presença digital completa para médicos, dentistas e advogados no Rio de Janeiro.</div>
         <div class="footer-socials">
           <a href="https://instagram.com/caluagencia" class="footer-social" title="Instagram">📸</a>
-          <a href="https://wa.me/55SEUNUMERO" class="footer-social" title="WhatsApp">💬</a>
+          <a href="https://wa.me/5521982629968" class="footer-social" title="WhatsApp">💬</a>
           <a href="mailto:contato@caluagencia.com.br" class="footer-social" title="Email">✉️</a>
         </div>
       </div>
       <div class="footer-col">
-        <div class="footer-col-title">Serviços</div>
-        <a href="#servicos">Produção de Vídeo</a>
-        <a href="#servicos">Gestão de Tráfego</a>
-        <a href="#servicos">Roteiro & Estratégia</a>
-        <a href="#servicos">Relatórios</a>
+        <div class="footer-col-title" data-i18n="footer.services">Serviços</div>
+        <a href="#servicos" data-i18n="footer.s1">Produção de Vídeo</a>
+        <a href="#servicos" data-i18n="footer.s2">Gestão de Tráfego</a>
+        <a href="#servicos" data-i18n="footer.s3">Roteiro & Estratégia</a>
+        <a href="#servicos" data-i18n="footer.s4">Relatórios</a>
       </div>
       <div class="footer-col">
-        <div class="footer-col-title">Empresa</div>
-        <a href="#portfolio">Portfólio</a>
-        <a href="#processo">Como Funciona</a>
-        <a href="#depoimentos">Depoimentos</a>
-        <a href="#cta">Contato</a>
+        <div class="footer-col-title" data-i18n="footer.company">Empresa</div>
+        <!-- <a href="#portfolio" data-i18n="footer.c1">Portfólio</a> -->
+        <a href="#processo" data-i18n="footer.c2">Como Funciona</a>
+        <a href="#depoimentos" data-i18n="footer.c3">Depoimentos</a>
+        <a href="#cta" data-i18n="footer.c4">Contato</a>
       </div>
       <div class="footer-col">
-        <div class="footer-col-title">Contato</div>
-        <a href="https://wa.me/55SEUNUMERO">WhatsApp</a>
+        <div class="footer-col-title" data-i18n="footer.contact">Contato</div>
+        <a href="https://wa.me/5521982629968">WhatsApp</a>
         <a href="mailto:contato@caluagencia.com.br">contato@caluagencia.com.br</a>
         <a href="#">Rio de Janeiro, RJ</a>
       </div>
     </div>
     <div class="footer-bottom">
-      <div class="footer-copy">© 2024 CALU. Todos os direitos reservados.</div>
-      <div class="footer-badge">Do vídeo ao cliente.</div>
+      <div class="footer-copy" data-i18n="footer.copy">© 2024 CALU. Todos os direitos reservados.</div>
+      <div class="footer-badge" data-i18n="footer.badge">Do vídeo ao cliente.</div>
     </div>
   </footer>
 
   <!-- WhatsApp Float -->
-  <a href="https://wa.me/55SEUNUMERO?text=Olá!%20Vim%20pelo%20site%20da%20Calu%20e%20quero%20saber%20mais." class="whatsapp-float" title="Falar no WhatsApp">
+  <a href="https://wa.me/5521982629968?text=Olá!%20Vim%20pelo%20site%20da%20Calu%20e%20quero%20saber%20mais." class="whatsapp-float" title="Falar no WhatsApp">
     💬
   </a>
 

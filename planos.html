@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Planos — CALU</title>
+  <meta name="robots" content="noindex, nofollow" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    @font-face {
+      font-family: 'Perpetua Titling MT';
+      src: url('PERTIBD.TTF') format('truetype');
+      font-weight: 700;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --black: #0a0a0a;
+      --white: #ffffff;
+      --off-white: #f7f6f3;
+      --gray-light: #ebebeb;
+      --text: #111111;
+      --accent: #c8a96e;
+      --serif: 'Libre Baskerville', Georgia, serif;
+      --sans: 'Inter', 'Helvetica Neue', sans-serif;
+    }
+    body {
+      background: var(--off-white);
+      color: var(--text);
+      font-family: var(--sans);
+      font-size: 16px;
+      line-height: 1.6;
+    }
+
+    /* Nav */
+    nav {
+      background: var(--black);
+      padding: 1.2rem 5vw;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .nav-logo {
+      font-family: 'Perpetua Titling MT', var(--serif);
+      font-size: 1.4rem;
+      letter-spacing: .18em;
+      color: var(--white);
+    }
+    .nav-back {
+      font-size: .78rem;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.5);
+      text-decoration: none;
+      transition: color .2s;
+    }
+    .nav-back:hover { color: var(--white); }
+
+    /* Hero */
+    .page-header {
+      background: var(--black);
+      color: var(--white);
+      text-align: center;
+      padding: 5rem 5vw 4rem;
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+    }
+    .page-tag {
+      font-size: .68rem;
+      letter-spacing: .22em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 1rem;
+      display: block;
+    }
+    .page-title {
+      font-family: var(--serif);
+      font-size: clamp(2rem, 5vw, 3.5rem);
+      font-weight: 700;
+      line-height: 1.1;
+      margin-bottom: 1rem;
+    }
+    .page-title em { font-style: italic; color: var(--accent); }
+    .page-sub {
+      font-size: 1rem;
+      color: rgba(255,255,255,0.5);
+      max-width: 480px;
+      margin: 0 auto;
+      line-height: 1.7;
+    }
+
+    /* Container */
+    .container { max-width: 1100px; margin: 0 auto; padding: 5rem 5vw; }
+
+    /* Planos */
+    .section-tag {
+      font-size: .68rem;
+      letter-spacing: .22em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 1rem;
+      display: block;
+    }
+    .section-title {
+      font-family: var(--serif);
+      font-size: clamp(1.6rem, 3vw, 2.4rem);
+      font-weight: 700;
+      margin-bottom: .6rem;
+    }
+    .section-sub {
+      font-size: .95rem;
+      color: #666;
+      margin-bottom: 3rem;
+      max-width: 500px;
+      line-height: 1.7;
+    }
+
+    .plans-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1px;
+      background: var(--gray-light);
+      border: 1px solid var(--gray-light);
+      margin-bottom: 1rem;
+    }
+    .plan-card {
+      background: var(--white);
+      padding: 2.5rem;
+      position: relative;
+      transition: background .2s;
+    }
+    .plan-card:hover { background: #fafafa; }
+    .plan-card--featured {
+      background: var(--black);
+    }
+    .plan-card--featured:hover { background: #111; }
+
+    .plan-badge {
+      display: inline-block;
+      font-size: .65rem;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      background: var(--accent);
+      color: var(--white);
+      padding: .25rem .8rem;
+      border-radius: 2px;
+      margin-bottom: 1.5rem;
+      font-weight: 600;
+    }
+    .plan-name {
+      font-family: var(--serif);
+      font-size: 1.4rem;
+      font-weight: 700;
+      margin-bottom: .3rem;
+      color: var(--text);
+    }
+    .plan-card--featured .plan-name { color: var(--white); }
+    .plan-desc {
+      font-size: .82rem;
+      color: #888;
+      margin-bottom: 2rem;
+      line-height: 1.6;
+    }
+    .plan-card--featured .plan-desc { color: rgba(255,255,255,0.45); }
+
+    .plan-price {
+      margin-bottom: 2rem;
+      padding-bottom: 2rem;
+      border-bottom: 1px solid var(--gray-light);
+    }
+    .plan-card--featured .plan-price { border-bottom-color: rgba(255,255,255,0.1); }
+    .plan-price-num {
+      font-family: var(--serif);
+      font-size: 2.8rem;
+      font-weight: 700;
+      line-height: 1;
+      color: var(--text);
+    }
+    .plan-card--featured .plan-price-num { color: var(--white); }
+    .plan-price-period {
+      font-size: .78rem;
+      color: #999;
+      letter-spacing: .06em;
+    }
+    .plan-card--featured .plan-price-period { color: rgba(255,255,255,0.4); }
+
+    .plan-includes {
+      font-size: .65rem;
+      letter-spacing: .15em;
+      text-transform: uppercase;
+      color: #bbb;
+      margin-bottom: .8rem;
+    }
+    .plan-card--featured .plan-includes { color: rgba(255,255,255,0.3); }
+    .plan-list { list-style: none; }
+    .plan-list li {
+      font-size: .85rem;
+      color: #555;
+      padding: .45rem 0;
+      border-bottom: 1px solid var(--gray-light);
+      display: flex;
+      gap: .7rem;
+      align-items: flex-start;
+    }
+    .plan-card--featured .plan-list li {
+      color: rgba(255,255,255,0.75);
+      border-bottom-color: rgba(255,255,255,0.08);
+    }
+    .plan-list li:last-child { border-bottom: none; }
+    .plan-list li::before {
+      content: '✓';
+      color: var(--accent);
+      font-size: .8rem;
+      flex-shrink: 0;
+      margin-top: .05rem;
+    }
+
+    .plan-note {
+      font-size: .72rem;
+      color: #aaa;
+      text-align: center;
+      margin-top: 1rem;
+    }
+
+    /* Adicionais */
+    .addons-section { margin-top: 5rem; }
+    .addons-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1px;
+      background: var(--gray-light);
+      border: 1px solid var(--gray-light);
+    }
+    .addon-card {
+      background: var(--white);
+      padding: 1.8rem;
+    }
+    .addon-icon { font-size: 1.5rem; margin-bottom: .8rem; }
+    .addon-name {
+      font-family: var(--serif);
+      font-size: 1rem;
+      font-weight: 700;
+      margin-bottom: .3rem;
+    }
+    .addon-desc { font-size: .82rem; color: #777; margin-bottom: 1rem; line-height: 1.6; }
+    .addon-price {
+      font-size: 1.3rem;
+      font-weight: 700;
+      font-family: var(--serif);
+      color: var(--text);
+    }
+    .addon-period { font-size: .75rem; color: #999; }
+
+    /* Avulsos */
+    .avulsos-section { margin-top: 5rem; }
+    .avulsos-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+    }
+    .avulso-card {
+      background: var(--white);
+      border: 1px solid var(--gray-light);
+      border-radius: 4px;
+      padding: 2rem;
+    }
+    .avulso-tag {
+      font-size: .65rem;
+      letter-spacing: .15em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: .6rem;
+      display: block;
+    }
+    .avulso-name {
+      font-family: var(--serif);
+      font-size: 1.2rem;
+      font-weight: 700;
+      margin-bottom: .5rem;
+    }
+    .avulso-desc { font-size: .83rem; color: #777; line-height: 1.7; margin-bottom: 1.5rem; }
+    .avulso-bottom {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      padding-top: 1.2rem;
+      border-top: 1px solid var(--gray-light);
+    }
+    .avulso-price {
+      font-family: var(--serif);
+      font-size: 1.6rem;
+      font-weight: 700;
+    }
+    .avulso-prazo { font-size: .75rem; color: #999; text-align: right; }
+
+    /* CTA final */
+    .cta-section {
+      background: var(--black);
+      color: var(--white);
+      text-align: center;
+      padding: 5rem 5vw;
+      margin-top: 5rem;
+    }
+    .cta-section .section-tag { color: var(--accent); }
+    .cta-title {
+      font-family: var(--serif);
+      font-size: clamp(1.8rem, 4vw, 3rem);
+      font-weight: 700;
+      margin-bottom: 1rem;
+      color: var(--white);
+    }
+    .cta-title em { font-style: italic; color: var(--accent); }
+    .cta-sub {
+      font-size: 1rem;
+      color: rgba(255,255,255,0.5);
+      max-width: 420px;
+      margin: 0 auto 2.5rem;
+      line-height: 1.7;
+    }
+    .btn-cta {
+      display: inline-block;
+      background: var(--accent);
+      color: var(--white);
+      padding: 1rem 2.5rem;
+      border-radius: 2px;
+      font-weight: 700;
+      font-size: .88rem;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      text-decoration: none;
+      transition: background .2s, transform .15s;
+    }
+    .btn-cta:hover { background: #b8945a; transform: translateY(-2px); }
+    .cta-disclaimer {
+      font-size: .75rem;
+      color: rgba(255,255,255,0.2);
+      margin-top: 1.2rem;
+    }
+
+    /* Footer */
+    footer {
+      background: #050505;
+      padding: 1.5rem 5vw;
+      text-align: center;
+      border-top: 1px solid rgba(255,255,255,0.06);
+    }
+    .footer-copy { font-size: .75rem; color: rgba(255,255,255,0.2); }
+
+    /* Responsive */
+    @media (max-width: 900px) {
+      .plans-grid { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 600px) {
+      .container { padding: 3rem 5vw; }
+      .avulsos-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <div class="nav-logo">CALU</div>
+    <a href="index.html" class="nav-back">← Voltar ao site</a>
+  </nav>
+
+  <div class="page-header">
+    <span class="page-tag">Proposta exclusiva</span>
+    <h1 class="page-title">Planos & <em>Investimento</em></h1>
+    <p class="page-sub">Conteúdo profissional com equipamento cinematográfico, feito presencialmente no Rio de Janeiro.</p>
+  </div>
+
+  <div class="container">
+
+    <!-- Planos principais -->
+    <span class="section-tag">Planos de produção de vídeo</span>
+    <h2 class="section-title">Escolha o volume certo pra você.</h2>
+    <p class="section-sub">Visitas presenciais mensais · vídeos editados prontos pra postar · sem você precisar fazer nada.</p>
+
+    <div class="plans-grid">
+
+      <div class="plan-card">
+        <div class="plan-badge" style="visibility:hidden">placeholder</div>
+        <div class="plan-name">Start</div>
+        <div class="plan-desc">Para quem quer começar a ter presença profissional nas redes.</div>
+        <div class="plan-price">
+          <div class="plan-price-num">R$ 800</div>
+          <div class="plan-price-period">/mês · contrato mínimo 3 meses</div>
+        </div>
+        <div class="plan-includes">Inclui</div>
+        <ul class="plan-list">
+          <li>1 visita presencial/mês</li>
+          <li>3 vídeos editados (reels/stories)</li>
+          <li>3 fotos tratadas</li>
+          <li>2 carrosséis</li>
+          <li>3 thumbnails personalizadas</li>
+          <li>Captação com equipamento cinematográfico</li>
+          <li>Entrega pronta pra postar</li>
+        </ul>
+      </div>
+
+      <div class="plan-card plan-card--featured">
+        <div class="plan-badge">Mais escolhido</div>
+        <div class="plan-name">Grow</div>
+        <div class="plan-desc">Para quem quer consistência e volume de conteúdo profissional.</div>
+        <div class="plan-price">
+          <div class="plan-price-num">R$ 1.200</div>
+          <div class="plan-price-period">/mês · contrato mínimo 3 meses</div>
+        </div>
+        <div class="plan-includes">Inclui</div>
+        <ul class="plan-list">
+          <li>1 visita presencial/mês</li>
+          <li>6 vídeos editados (reels/stories)</li>
+          <li>6 fotos tratadas</li>
+          <li>4 carrosséis</li>
+          <li>6 thumbnails personalizadas</li>
+          <li>Captação com equipamento cinematográfico</li>
+          <li>Entrega pronta pra postar</li>
+          <li>Estratégia de pauta mensal</li>
+        </ul>
+      </div>
+
+      <div class="plan-card">
+        <div class="plan-badge" style="visibility:hidden">placeholder</div>
+        <div class="plan-name">Pro</div>
+        <div class="plan-desc">Para quem quer posicionamento máximo e presença diária nas redes.</div>
+        <div class="plan-price">
+          <div class="plan-price-num">R$ 1.800</div>
+          <div class="plan-price-period">/mês · contrato mínimo 3 meses</div>
+        </div>
+        <div class="plan-includes">Inclui</div>
+        <ul class="plan-list">
+          <li>2 visitas presenciais/mês</li>
+          <li>9 vídeos editados (reels/stories)</li>
+          <li>9 fotos tratadas</li>
+          <li>6 carrosséis</li>
+          <li>9 thumbnails personalizadas</li>
+          <li>Captação com equipamento cinematográfico</li>
+          <li>Entrega pronta pra postar</li>
+          <li>Estratégia de pauta mensal</li>
+          <li>1 vídeo institucional por mês</li>
+        </ul>
+      </div>
+
+    </div>
+    <p class="plan-note">Todos os planos incluem reunião de alinhamento mensal e relatório de entregas.</p>
+
+    <!-- Adicionais -->
+    <div class="addons-section">
+      <span class="section-tag">Adicionais</span>
+      <h2 class="section-title">Potencialize seu plano.</h2>
+      <p class="section-sub">Adicione serviços conforme a necessidade do seu negócio — sem obrigatoriedade.</p>
+
+      <div class="addons-grid">
+        <div class="addon-card">
+          <div class="addon-icon">📱</div>
+          <div class="addon-name">Gestão de Postagem</div>
+          <div class="addon-desc">Agendamento, legenda e hashtags de cada vídeo entregue no plano.</div>
+          <div class="addon-price">R$ 400<span class="addon-period">/mês</span></div>
+        </div>
+        <div class="addon-card">
+          <div class="addon-icon">🎯</div>
+          <div class="addon-name">Gestão Meta Ads</div>
+          <div class="addon-desc">Campanhas no Facebook e Instagram para atrair clientes novos. Verba à parte.</div>
+          <div class="addon-price">R$ 800<span class="addon-period">/mês + verba</span></div>
+        </div>
+        <div class="addon-card">
+          <div class="addon-icon">📍</div>
+          <div class="addon-name">Google Meu Negócio</div>
+          <div class="addon-desc">Otimização do seu perfil no Google Maps para aparecer nas buscas locais do RJ.</div>
+          <div class="addon-price">R$ 300<span class="addon-period">/mês</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Avulsos -->
+    <div class="avulsos-section">
+      <span class="section-tag">Serviços avulsos</span>
+      <h2 class="section-title">Projetos únicos.</h2>
+      <p class="section-sub">Sem mensalidade — você paga uma vez e fica com o resultado.</p>
+
+      <div class="avulsos-grid">
+        <div class="avulso-card">
+          <span class="avulso-tag">Site</span>
+          <div class="avulso-name">Site Profissional</div>
+          <p class="avulso-desc">Desenvolvimento completo, mobile-first e otimizado para o Google. Até 5 páginas com formulário de contato integrado.</p>
+          <div class="avulso-bottom">
+            <div class="avulso-price">R$ 2.500</div>
+            <div class="avulso-prazo">Entrega em<br/>15 dias úteis</div>
+          </div>
+        </div>
+        <div class="avulso-card">
+          <span class="avulso-tag">Landing Page</span>
+          <div class="avulso-name">Página de Conversão</div>
+          <p class="avulso-desc">Uma página focada em converter visitantes em pacientes ou clientes. Ideal para um serviço ou procedimento específico.</p>
+          <div class="avulso-bottom">
+            <div class="avulso-price">R$ 1.200</div>
+            <div class="avulso-prazo">Entrega em<br/>7 dias úteis</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- CTA -->
+  <div class="cta-section">
+    <span class="section-tag">Próximo passo</span>
+    <h2 class="cta-title">Pronto para começar?<br/><em>A gente cuida do resto.</em></h2>
+    <p class="cta-sub">Clique abaixo e fale diretamente com a Calu no WhatsApp. Sem compromisso.</p>
+    <a href="https://wa.me/5521982629968?text=Olá!%20Vi%20os%20planos%20da%20Calu%20e%20quero%20saber%20mais." class="btn-cta">Falar com a Calu no WhatsApp →</a>
+    <p class="cta-disclaimer">Resposta em até 24h · 100% sem enrolação</p>
+  </div>
+
+  <footer>
+    <div class="footer-copy">© 2024 CALU. Todos os direitos reservados.</div>
+  </footer>
+
+</body>
+</html>
