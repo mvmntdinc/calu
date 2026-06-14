@@ -83,7 +83,7 @@ img { max-width: 100%; display: block; }
 
 /* ── Nav ── */
 nav {
-  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  position: relative; z-index: 100;
   display: flex; justify-content: space-between; align-items: center;
   padding: 1.5rem 5vw;
   background: var(--black);
@@ -158,7 +158,7 @@ nav.scrolled {
 #hero {
   min-height: 100vh;
   display: flex; flex-direction: column; align-items: flex-start; justify-content: center;
-  padding: 8rem 10vw 6rem;
+  padding: 5rem 10vw 6rem;
   position: relative;
   overflow: hidden;
   background: var(--black);
