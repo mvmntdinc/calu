@@ -782,14 +782,28 @@ footer {
   .footer-top { grid-template-columns: 1fr 1fr; }
 }
 
-/* ── Responsive 600px ── */
+/* ── Responsive 768px (tablet portrait) ── */
+@media (max-width: 768px) {
+  .pq-cols { grid-template-columns: 1fr; }
+  .process-steps { grid-template-columns: 1fr; }
+  .footer-top { grid-template-columns: 1fr; gap: 2rem; }
+  .cta-inner { grid-template-columns: 1fr; gap: 3rem; }
+}
+
+/* ── Responsive 600px (mobile) ── */
 @media (max-width: 600px) {
+  /* Desativa scroll snap no mobile — conflita com carrossel horizontal */
+  html { scroll-snap-type: none; }
+  section, footer { scroll-snap-align: unset; }
+
   nav { padding: 1rem 5vw; }
   section { padding: 3.5rem 0; min-height: auto; }
-  #hero { padding: 6rem 6vw 4rem; min-height: 100svh; }
+
+  #hero { padding: 8rem 6vw 5rem; min-height: 100svh; justify-content: center; }
   .hero-title { font-size: clamp(2.4rem, 10vw, 3.5rem); }
   .hero-sub { font-size: .9rem; margin-top: 1rem; max-width: 100%; }
-  .hero-actions { flex-direction: column; gap: .6rem; padding: 0 6vw; }
+  /* Remove padding redundante — hero já tem padding lateral */
+  .hero-actions { flex-direction: column; gap: .6rem; }
   .btn-primary, .btn-outline { width: 100%; text-align: center; padding: 1rem; }
 
   .section-title { font-size: clamp(2rem, 8.5vw, 2.8rem); letter-spacing: -.04em; }
@@ -811,8 +825,6 @@ footer {
     -webkit-overflow-scrolling: touch;
     scrollbar-width: none;
     padding: .5rem 5vw 1.5rem;
-    /* último card sempre parcialmente visível */
-    padding-right: 12vw;
     margin-bottom: 0;
   }
   .pq-cols::-webkit-scrollbar,
@@ -820,12 +832,22 @@ footer {
   .process-steps::-webkit-scrollbar,
   .testi-items::-webkit-scrollbar { display: none; }
 
-  /* tamanho fixo dos cards no carrossel */
+  /* Espaçador no fim do carrossel para ver próximo card — fix Safari iOS */
+  .pq-cols::after,
+  .svc-rows::after,
+  .process-steps::after,
+  .testi-items::after {
+    content: '';
+    flex: 0 0 10vw;
+    display: block;
+  }
+
+  /* Tamanho fixo dos cards — min() evita overflow em telas muito estreitas */
   .pq-col,
   .svc-row,
   .process-step,
   .testi-item {
-    flex: 0 0 72vw;
+    flex: 0 0 min(72vw, 300px);
     min-height: 220px;
     padding: 2rem;
     border-radius: 16px;
@@ -835,8 +857,19 @@ footer {
   .pq-bottom { flex-direction: column; gap: 1rem; margin-top: 1rem; }
   .pq-bottom .btn-dark { width: 100%; text-align: center; }
 
+  /* CTA mobile — mostra botão de WhatsApp com mais destaque */
   #cta { padding: 3.5rem 5vw; }
   .cta-inner { gap: 2rem; }
+  .cta-mobile-btn { display: block; }
+  .cta-form-wrap { display: none; }
+  .cta-mobile-btn .btn-submit {
+    background: var(--black);
+    color: var(--white);
+    font-size: 1rem;
+    padding: 1.1rem 2rem;
+  }
+  .cta-trust { flex-direction: row; flex-wrap: wrap; gap: .8rem; margin-top: 1.5rem; }
+  .cta-trust-item { font-size: .75rem; }
 
   .footer-top { grid-template-columns: 1fr; gap: 2rem; padding: 0 5vw; }
   footer { padding: 3rem 5vw 2rem; min-height: auto; }
