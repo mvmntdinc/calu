@@ -43,7 +43,7 @@
 :root {
   --black: #0a0a0a;
   --white: #ffffff;
-  --off-white: #f5f4f1;
+  --off-white: #f5f5f7;
   --gray-light: #e8e8e8;
   --gray-mid: #888;
   --text: #111111;
@@ -58,7 +58,7 @@ html {
   height: 100%;
 }
 body {
-  background: var(--white);
+  background: #f5f5f7;
   color: var(--text);
   font-family: var(--sans);
   font-size: 16px;
@@ -251,7 +251,7 @@ section { padding: 6rem 8vw; }
 }
 
 /* ── Para quem é ── */
-#para-quem { background: #f5f5f7; }
+#para-quem { background: var(--off-white); }
 
 .pq-intro { margin-bottom: 2.5rem; }
 
@@ -344,7 +344,7 @@ section { padding: 6rem 8vw; }
 .pq-bottom strong { color: #777; font-weight: 600; }
 
 /* ── Serviços (dark) ── */
-#servicos { background: #f5f5f7; color: var(--text); }
+#servicos { background: var(--off-white); color: var(--text); }
 #servicos .section-title { color: var(--text); }
 #servicos .section-sub { color: #888; }
 
@@ -450,7 +450,7 @@ section { padding: 6rem 8vw; }
 }
 
 /* ── Depoimentos ── */
-#depoimentos { background: #f5f5f7; color: var(--text); }
+#depoimentos { background: var(--off-white); color: var(--text); }
 #depoimentos .section-title { color: var(--text); }
 .testi-header { margin-bottom: 2.5rem; }
 
