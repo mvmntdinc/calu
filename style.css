@@ -246,12 +246,13 @@ section { padding: 5rem 8vw 2rem; }
 .section-title em { font-style: italic; color: var(--accent); font-weight: 800; }
 .title-muted { color: #6e6e73; font-weight: 800; }
 .google-logo {
-  height: .85em;
+  height: 1em;
   width: auto;
   display: inline-block;
   vertical-align: middle;
   position: relative;
-  top: -.05em;
+  top: -.08em;
+  background: none;
 }
 .section-sub {
   margin-top: 1.5rem;
@@ -525,6 +526,48 @@ section { padding: 5rem 8vw 2rem; }
   font-size: clamp(2rem, 4vw, 4.5rem);
   max-width: 640px;
   line-height: 1.05;
+}
+.cta-title-block {
+  text-align: justify;
+  text-align-last: left;
+}
+.cta-line-big {
+  font-size: 1.32em;
+  letter-spacing: -.05em;
+}
+.cta-headline { display: flex; flex-direction: column; gap: 0; }
+.cta-pre {
+  font-size: clamp(1rem, 2vw, 1.4rem);
+  font-weight: 600;
+  color: #6e6e73;
+  letter-spacing: -.02em;
+  margin-bottom: -.1em;
+}
+.cta-mas {
+  font-size: clamp(4rem, 10vw, 9rem);
+  font-weight: 800;
+  color: var(--text);
+  letter-spacing: -.06em;
+  line-height: .85;
+  margin: 0;
+}
+.cta-mid {
+  font-size: clamp(1.2rem, 2vw, 1.6rem);
+  font-weight: 600;
+  color: #6e6e73;
+  letter-spacing: -.02em;
+  margin-top: .4em;
+  display: flex;
+  align-items: center;
+  gap: .4em;
+  flex-wrap: wrap;
+}
+.cta-google {
+  height: 1.4em;
+  width: auto;
+  object-fit: contain;
+  display: inline-block;
+  vertical-align: middle;
 }
 #cta .section-sub { color: #888; margin-top: 1.2rem; max-width: 400px; }
 
