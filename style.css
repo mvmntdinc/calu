@@ -241,6 +241,7 @@ section { padding: 6rem 8vw; }
   color: var(--text);
 }
 .section-title em { font-style: italic; color: var(--accent); font-weight: 800; }
+.title-muted { color: #6e6e73; font-weight: 800; }
 .section-sub {
   margin-top: 1.5rem;
   font-size: 1rem;
