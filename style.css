@@ -16,8 +16,8 @@
   --gray-mid: #888;
   --text: #111111;
   --accent: #c8a96e;
-  --serif: 'Libre Baskerville', 'Georgia', serif;
-  --sans: 'Inter', 'Helvetica Neue', sans-serif;
+  --serif: 'Plus Jakarta Sans', sans-serif;
+  --sans: 'Plus Jakarta Sans', sans-serif;
 }
 html {
   scroll-behavior: smooth;
@@ -148,15 +148,15 @@ nav.scrolled {
 #hero > *:not(.hero-slide) { position: relative; z-index: 1; }
 .hero-bg { display: none; }
 .hero-title {
-  font-family: var(--serif);
-  font-size: clamp(2rem, 4.5vw, 5rem);
-  font-weight: 700;
-  line-height: 1.05;
-  letter-spacing: -0.02em;
+  font-family: var(--sans);
+  font-size: clamp(2.2rem, 5vw, 5.5rem);
+  font-weight: 800;
+  line-height: 1.02;
+  letter-spacing: -0.04em;
   max-width: 950px;
   color: var(--white);
 }
-.hero-title em { font-style: italic; color: var(--accent); }
+.hero-title em { font-style: italic; color: var(--accent); font-weight: 800; }
 .hero-sub {
   margin-top: 1.8rem;
   font-size: 1.05rem;
@@ -194,13 +194,13 @@ section { padding: 7rem 8vw; }
 }
 .section-title {
   font-family: var(--sans);
-  font-size: clamp(2rem, 3.5vw, 3.2rem);
+  font-size: clamp(2.2rem, 3.8vw, 3.6rem);
   font-weight: 800;
-  line-height: 1.08;
-  letter-spacing: -.03em;
+  line-height: 1.02;
+  letter-spacing: -.04em;
   color: var(--text);
 }
-.section-title em { font-style: italic; color: var(--accent); font-weight: 700; }
+.section-title em { font-style: italic; color: var(--accent); font-weight: 800; }
 .section-sub {
   margin-top: 1.2rem;
   font-size: .95rem;
