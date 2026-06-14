@@ -581,15 +581,15 @@ section { padding: 6rem 8vw; }
 .form-input::placeholder { color: rgba(255,255,255,0.2); }
 .form-input:focus { border-color: var(--accent); }
 .btn-submit {
-  background: var(--accent); color: var(--white);
+  background: var(--black); color: var(--white);
   border: none; padding: .9rem 2rem;
-  border-radius: 2px; font-family: var(--sans);
-  font-weight: 700; font-size: .82rem;
-  letter-spacing: .08em; text-transform: uppercase;
+  border-radius: 980px; font-family: var(--sans);
+  font-weight: 600; font-size: .82rem;
+  letter-spacing: .02em;
   cursor: pointer; transition: background .2s, transform .15s;
   width: 100%;
 }
-.btn-submit:hover { background: #b8945a; transform: translateY(-2px); }
+.btn-submit:hover { background: #333; transform: translateY(-1px); }
 .form-disclaimer {
   font-size: .7rem;
   color: #bbb;
