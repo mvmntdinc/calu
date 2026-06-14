@@ -251,7 +251,7 @@ section { padding: 6rem 8vw; }
 }
 
 /* ── Para quem é ── */
-#para-quem { background: var(--off-white); }
+#para-quem { background: var(--off-white); padding-top: 3rem; }
 
 .pq-intro { margin-bottom: 2.5rem; }
 
