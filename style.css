@@ -715,35 +715,60 @@ footer {
 /* ── Responsive 600px ── */
 @media (max-width: 600px) {
   nav { padding: 1rem 5vw; }
-  section { padding: 4rem 5vw; min-height: auto; }
+  section { padding: 3.5rem 0; min-height: auto; }
   #hero { padding: 6rem 6vw 4rem; min-height: 100svh; }
   .hero-title { font-size: clamp(2.4rem, 10vw, 3.5rem); }
   .hero-sub { font-size: .9rem; margin-top: 1rem; max-width: 100%; }
-  .hero-actions { flex-direction: column; gap: .6rem; }
+  .hero-actions { flex-direction: column; gap: .6rem; padding: 0 6vw; }
   .btn-primary, .btn-outline { width: 100%; text-align: center; padding: 1rem; }
 
-  .section-title { font-size: clamp(2.2rem, 9vw, 3rem); letter-spacing: -.04em; }
+  .section-title { font-size: clamp(2rem, 8.5vw, 2.8rem); letter-spacing: -.04em; }
 
-  .pq-cols { grid-template-columns: 1fr; gap: .75rem; }
-  .pq-col { min-height: 220px; padding: 2rem; border-radius: 16px; }
-  .pq-bottom { flex-direction: column; gap: 1rem; }
+  /* títulos e tags com padding lateral */
+  .pq-intro, .svc-header, .process-header, .testi-header, .pq-bottom { padding-left: 5vw; padding-right: 5vw; }
+
+  /* ── Carrossel horizontal ── */
+  .pq-cols,
+  .svc-rows,
+  .process-steps,
+  .testi-items {
+    display: flex;
+    flex-direction: row;
+    overflow-x: auto;
+    overflow-y: visible;
+    gap: .75rem;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    padding: .5rem 5vw 1.5rem;
+    /* último card sempre parcialmente visível */
+    padding-right: 12vw;
+    margin-bottom: 0;
+  }
+  .pq-cols::-webkit-scrollbar,
+  .svc-rows::-webkit-scrollbar,
+  .process-steps::-webkit-scrollbar,
+  .testi-items::-webkit-scrollbar { display: none; }
+
+  /* tamanho fixo dos cards no carrossel */
+  .pq-col,
+  .svc-row,
+  .process-step,
+  .testi-item {
+    flex: 0 0 72vw;
+    min-height: 220px;
+    padding: 2rem;
+    border-radius: 16px;
+    scroll-snap-align: start;
+  }
+
+  .pq-bottom { flex-direction: column; gap: 1rem; margin-top: 1rem; }
   .pq-bottom .btn-dark { width: 100%; text-align: center; }
 
-  #servicos { padding: 4rem 5vw; }
-  .svc-rows { grid-template-columns: 1fr; gap: .75rem; }
-  .svc-row { min-height: 180px; padding: 2rem; border-radius: 16px; }
-
-  #processo { padding: 4rem 5vw; }
-  .process-steps { grid-template-columns: 1fr; gap: .75rem; }
-  .process-step { min-height: 160px; padding: 2rem; border-radius: 16px; }
-
-  .testi-items { grid-template-columns: 1fr; gap: .75rem; }
-  .testi-item { padding: 2rem; border-radius: 16px; }
-
-  #cta { padding: 4rem 5vw; }
+  #cta { padding: 3.5rem 5vw; }
   .cta-inner { gap: 2rem; }
 
-  .footer-top { grid-template-columns: 1fr; gap: 2rem; }
+  .footer-top { grid-template-columns: 1fr; gap: 2rem; padding: 0 5vw; }
   footer { padding: 3rem 5vw 2rem; min-height: auto; }
   .cta-form-wrap { padding: 1.4rem; }
 }
