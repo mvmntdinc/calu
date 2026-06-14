@@ -6,6 +6,38 @@
   font-style: normal;
 }
 
+/* ── SF Pro Display ── */
+@font-face {
+  font-family: 'SF Pro Display';
+  src: url('SFPRODISPLAYREGULAR.OTF') format('opentype');
+  font-weight: 400; font-style: normal;
+}
+@font-face {
+  font-family: 'SF Pro Display';
+  src: url('SFPRODISPLAYMEDIUM.OTF') format('opentype');
+  font-weight: 500; font-style: normal;
+}
+@font-face {
+  font-family: 'SF Pro Display';
+  src: url('SFPRODISPLAYBOLD.OTF') format('opentype');
+  font-weight: 700; font-style: normal;
+}
+@font-face {
+  font-family: 'SF Pro Display';
+  src: url('SFPRODISPLAYBLACKITALIC.OTF') format('opentype');
+  font-weight: 900; font-style: italic;
+}
+@font-face {
+  font-family: 'SF Pro Display';
+  src: url('SFPRODISPLAYHEAVYITALIC.OTF') format('opentype');
+  font-weight: 800; font-style: italic;
+}
+@font-face {
+  font-family: 'SF Pro Display';
+  src: url('SFPRODISPLAYSEMIBOLDITALIC.OTF') format('opentype');
+  font-weight: 600; font-style: italic;
+}
+
 /* ── Reset & Base ── */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 :root {
@@ -16,8 +48,8 @@
   --gray-mid: #888;
   --text: #111111;
   --accent: #c8a96e;
-  --serif: 'Plus Jakarta Sans', sans-serif;
-  --sans: 'Plus Jakarta Sans', sans-serif;
+  --serif: 'SF Pro Display', sans-serif;
+  --sans: 'SF Pro Display', sans-serif;
 }
 html {
   scroll-behavior: smooth;
