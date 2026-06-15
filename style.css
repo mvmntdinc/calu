@@ -342,6 +342,24 @@ section { padding: 5rem 8vw 2rem; }
   background: var(--accent);
 }
 
+.pq-col--found {
+  min-height: 420px;
+}
+
+.pq-col-mockup {
+  margin: 1.4rem 0 0;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.10);
+  border: 1px solid rgba(0,0,0,0.07);
+}
+
+.pq-col-mockup img {
+  width: 100%;
+  display: block;
+  border-radius: 10px;
+}
+
 .pq-bottom {
   display: flex;
   align-items: center;
