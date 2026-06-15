@@ -30,7 +30,7 @@ const translations = {
     'portfolio.follow': 'Seguir',
     'portfolio.more': 'Ver mais no Instagram',
     'process.tag': 'Como funciona',
-    'process.title': 'Simples para você. Complexo por baixo.',
+    'process.title': 'Nós transformamos marketing em clientes.',
     'process.sub': 'Você não precisa entender de marketing. Precisa só atender os novos clientes que vão chegar.',
     'step1.title': 'Diagnóstico gratuito',
     'step1.desc': 'Analisamos sua presença digital atual, seus concorrentes e onde estão as maiores oportunidades para o seu perfil.',
